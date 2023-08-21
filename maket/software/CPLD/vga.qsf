@@ -1,0 +1,121 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2012 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 12.1 Build 177 11/07/2012 SJ Web Edition
+# Date created = 13:03:54  June 12, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		vga_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM240T100C5
+set_global_assignment -name TOP_LEVEL_ENTITY vga
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:03:54  JUNE 12, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION 12.1
+set_global_assignment -name VERILOG_FILE vga.v
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE TQFP
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 100
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 5
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_12 -to gen
+set_location_assignment PIN_8 -to hs
+set_location_assignment PIN_7 -to vs
+set_location_assignment PIN_77 -to led
+set_location_assignment PIN_44 -to reset
+set_location_assignment PIN_69 -to rom_addr[10]
+set_location_assignment PIN_47 -to rom_addr[9]
+set_location_assignment PIN_49 -to rom_addr[8]
+set_location_assignment PIN_48 -to rom_addr[7]
+set_location_assignment PIN_75 -to rom_addr[6]
+set_location_assignment PIN_73 -to rom_addr[5]
+set_location_assignment PIN_76 -to rom_addr[4]
+set_location_assignment PIN_74 -to rom_addr[3]
+set_location_assignment PIN_72 -to rom_addr[2]
+set_location_assignment PIN_70 -to rom_addr[1]
+set_location_assignment PIN_68 -to rom_addr[0]
+set_location_assignment PIN_67 -to rom_data[7]
+set_location_assignment PIN_61 -to rom_data[6]
+set_location_assignment PIN_57 -to rom_data[5]
+set_location_assignment PIN_55 -to rom_data[4]
+set_location_assignment PIN_54 -to rom_data[3]
+set_location_assignment PIN_56 -to rom_data[2]
+set_location_assignment PIN_58 -to rom_data[1]
+set_location_assignment PIN_66 -to rom_data[0]
+set_location_assignment PIN_71 -to rom_rc
+set_location_assignment PIN_85 -to ram_addr[12]
+set_location_assignment PIN_83 -to ram_addr[11]
+set_location_assignment PIN_87 -to ram_addr[7]
+set_location_assignment PIN_89 -to ram_addr[6]
+set_location_assignment PIN_91 -to ram_addr[5]
+set_location_assignment PIN_95 -to ram_addr[4]
+set_location_assignment PIN_97 -to ram_addr[3]
+set_location_assignment PIN_99 -to ram_addr[2]
+set_location_assignment PIN_90 -to ram_addr[1]
+set_location_assignment PIN_92 -to ram_addr[0]
+set_location_assignment PIN_96 -to ram_data[0]
+set_location_assignment PIN_98 -to ram_data[1]
+set_location_assignment PIN_88 -to ram_data[2]
+set_location_assignment PIN_17 -to ram_data[3]
+set_location_assignment PIN_19 -to ram_data[4]
+set_location_assignment PIN_18 -to ram_data[5]
+set_location_assignment PIN_20 -to ram_data[6]
+set_location_assignment PIN_21 -to ram_data[7]
+set_location_assignment PIN_28 -to ram_we
+set_location_assignment PIN_26 -to ram_addr[8]
+set_location_assignment PIN_27 -to ram_addr[9]
+set_location_assignment PIN_29 -to ram_addr[10]
+set_location_assignment PIN_16 -to ram_addr[13]
+set_location_assignment PIN_30 -to host_data[0]
+set_location_assignment PIN_33 -to host_data[1]
+set_location_assignment PIN_34 -to host_data[2]
+set_location_assignment PIN_35 -to host_data[3]
+set_location_assignment PIN_36 -to host_data[4]
+set_location_assignment PIN_37 -to host_data[5]
+set_location_assignment PIN_38 -to host_data[6]
+set_location_assignment PIN_39 -to host_data[7]
+set_location_assignment PIN_40 -to host_ad
+set_location_assignment PIN_41 -to host_cs
+set_location_assignment PIN_42 -to host_busy
+set_location_assignment PIN_3 -to rgb[5]
+set_location_assignment PIN_5 -to rgb[4]
+set_location_assignment PIN_4 -to rgb[3]
+set_location_assignment PIN_1 -to rgb[2]
+set_location_assignment PIN_6 -to rgb[1]
+set_location_assignment PIN_2 -to rgb[0]

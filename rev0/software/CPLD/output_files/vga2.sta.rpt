@@ -1,0 +1,1491 @@
+TimeQuest Timing Analyzer report for vga2
+Mon Nov 20 14:52:44 2023
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'host_cs'
+ 12. Setup: 'gen'
+ 13. Hold: 'gen'
+ 14. Hold: 'host_cs'
+ 15. Minimum Pulse Width: 'gen'
+ 16. Minimum Pulse Width: 'host_cs'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Propagation Delay
+ 22. Minimum Propagation Delay
+ 23. Output Enable Times
+ 24. Minimum Output Enable Times
+ 25. Output Disable Times
+ 26. Minimum Output Disable Times
+ 27. Setup Transfers
+ 28. Hold Transfers
+ 29. Report TCCS
+ 30. Report RSKM
+ 31. Unconstrained Paths
+ 32. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                     ;
++--------------------+--------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name      ; vga2                                             ;
+; Device Family      ; MAX II                                           ;
+; Device Name        ; EPM240T100C5                                     ;
+; Timing Models      ; Final                                            ;
+; Delay Model        ; Slow Model                                       ;
+; Rise/Fall Delays   ; Unavailable                                      ;
++--------------------+--------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                              ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets     ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; gen        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { gen }     ;
+; host_cs    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { host_cs } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 95.21 MHz  ; 95.21 MHz       ; host_cs    ;      ;
+; 103.43 MHz ; 103.43 MHz      ; gen        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Setup Summary                    ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; host_cs ; -9.503 ; -243.421      ;
+; gen     ; -8.668 ; -639.799      ;
++---------+--------+---------------+
+
+
++---------------------------------+
+; Hold Summary                    ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; gen     ; 1.374 ; 0.000         ;
+; host_cs ; 2.908 ; 0.000         ;
++---------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++----------------------------------+
+; Minimum Pulse Width Summary      ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; gen     ; -3.000 ; -3.000        ;
+; host_cs ; -3.000 ; -3.000        ;
++---------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Setup: 'host_cs'                                                                                                   ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; -9.503 ; ram_addr_ext[6]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.170     ;
+; -9.502 ; ram_addr_ext[6]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.169     ;
+; -9.497 ; ram_addr_ext[6]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.164     ;
+; -9.495 ; ram_addr_ext[6]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.162     ;
+; -9.443 ; ram_addr_ext[5]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.110     ;
+; -9.442 ; ram_addr_ext[5]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.109     ;
+; -9.437 ; ram_addr_ext[5]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.104     ;
+; -9.435 ; ram_addr_ext[5]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.102     ;
+; -9.418 ; ram_addr_ext[9]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.085     ;
+; -9.417 ; ram_addr_ext[9]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.084     ;
+; -9.412 ; ram_addr_ext[9]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.079     ;
+; -9.410 ; ram_addr_ext[9]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 10.077     ;
+; -9.288 ; ram_addr_ext[6]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.955      ;
+; -9.228 ; ram_addr_ext[5]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.895      ;
+; -9.203 ; ram_addr_ext[9]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.870      ;
+; -9.095 ; ram_addr_ext[0]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.762      ;
+; -9.081 ; ram_addr_ext[1]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.748      ;
+; -9.029 ; ram_addr_ext[4]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.696      ;
+; -8.954 ; ram_addr_ext[3]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.621      ;
+; -8.916 ; ram_addr_ext[2]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.583      ;
+; -8.865 ; ram_addr_ext[6]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.532      ;
+; -8.831 ; ram_addr_ext[1]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.498      ;
+; -8.805 ; ram_addr_ext[5]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.472      ;
+; -8.780 ; ram_addr_ext[9]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.447      ;
+; -8.713 ; ram_addr_ext[5]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.380      ;
+; -8.686 ; ram_addr_ext[1]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.353      ;
+; -8.684 ; ram_addr_ext[8]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.351      ;
+; -8.683 ; ram_addr_ext[8]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.350      ;
+; -8.678 ; ram_addr_ext[8]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.345      ;
+; -8.676 ; ram_addr_ext[8]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.343      ;
+; -8.646 ; ram_addr_ext[3]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.313      ;
+; -8.642 ; ram_addr_ext[10] ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.309      ;
+; -8.608 ; ram_addr_ext[2]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.275      ;
+; -8.604 ; ram_addr_ext[3]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.271      ;
+; -8.528 ; ram_addr_ext[5]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.195      ;
+; -8.523 ; ram_addr_ext[1]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.190      ;
+; -8.521 ; ram_addr_ext[3]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.188      ;
+; -8.518 ; ram_addr_ext[3]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.185      ;
+; -8.517 ; ram_addr_ext[3]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.184      ;
+; -8.483 ; ram_addr_ext[2]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.150      ;
+; -8.469 ; ram_addr_ext[8]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.136      ;
+; -8.464 ; ram_addr_ext[0]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.131      ;
+; -8.455 ; ram_addr_ext[0]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.122      ;
+; -8.450 ; ram_addr_ext[1]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.117      ;
+; -8.421 ; ram_addr_ext[1]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.088      ;
+; -8.415 ; ram_addr_ext[2]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.082      ;
+; -8.398 ; ram_addr_ext[4]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.065      ;
+; -8.397 ; ram_addr_ext[6]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.064      ;
+; -8.396 ; ram_addr_ext[6]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.063      ;
+; -8.389 ; ram_addr_ext[4]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.056      ;
+; -8.337 ; ram_addr_ext[5]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.004      ;
+; -8.336 ; ram_addr_ext[5]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 9.003      ;
+; -8.328 ; ram_addr_ext[2]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.995      ;
+; -8.327 ; ram_addr_ext[2]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.994      ;
+; -8.312 ; ram_addr_ext[9]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.979      ;
+; -8.311 ; ram_addr_ext[9]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.978      ;
+; -8.302 ; ram_addr_ext[0]  ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.969      ;
+; -8.299 ; ram_addr_ext[6]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.966      ;
+; -8.296 ; ram_addr_ext[6]  ; ram_addr_ext[3]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.963      ;
+; -8.288 ; ram_addr_ext[1]  ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.955      ;
+; -8.279 ; ram_addr_ext[0]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.946      ;
+; -8.265 ; ram_addr_ext[1]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.932      ;
+; -8.236 ; ram_addr_ext[5]  ; ram_addr_ext[3]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.903      ;
+; -8.214 ; ram_addr_ext[9]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.881      ;
+; -8.213 ; ram_addr_ext[4]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.880      ;
+; -8.212 ; ram_addr_ext[2]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.879      ;
+; -8.211 ; ram_addr_ext[9]  ; ram_addr_ext[3]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.878      ;
+; -8.186 ; ram_addr_ext[10] ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.853      ;
+; -8.157 ; ram_addr_ext[0]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.824      ;
+; -8.155 ; ram_addr_ext[0]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.822      ;
+; -8.146 ; ram_addr_ext[9]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.813      ;
+; -8.091 ; ram_addr_ext[10] ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.758      ;
+; -8.090 ; ram_addr_ext[6]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.757      ;
+; -8.090 ; ram_addr_ext[10] ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.757      ;
+; -8.085 ; ram_addr_ext[10] ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.752      ;
+; -8.083 ; ram_addr_ext[10] ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.750      ;
+; -8.065 ; ram_addr_ext[3]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.732      ;
+; -8.050 ; ram_addr_ext[0]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.717      ;
+; -8.046 ; ram_addr_ext[8]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.713      ;
+; -8.032 ; ram_addr_ext[4]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.699      ;
+; -7.945 ; ram_addr_ext[8]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.612      ;
+; -7.924 ; ram_addr_ext[7]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.591      ;
+; -7.923 ; ram_addr_ext[7]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.590      ;
+; -7.922 ; ram_addr_ext[7]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.589      ;
+; -7.918 ; ram_addr_ext[7]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.585      ;
+; -7.916 ; ram_addr_ext[7]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.583      ;
+; -7.905 ; ram_addr_ext[8]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.572      ;
+; -7.880 ; ram_addr_ext[3]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.547      ;
+; -7.870 ; ram_addr_ext[4]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.537      ;
+; -7.721 ; ram_addr_ext[6]  ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.388      ;
+; -7.703 ; ram_addr_ext[11] ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.370      ;
+; -7.703 ; ram_addr_ext[4]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.370      ;
+; -7.690 ; ram_addr_ext[2]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.357      ;
+; -7.661 ; ram_addr_ext[5]  ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.328      ;
+; -7.654 ; ram_addr_ext[13] ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.321      ;
+; -7.578 ; ram_addr_ext[8]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.245      ;
+; -7.577 ; ram_addr_ext[8]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.244      ;
+; -7.535 ; cntrl_reg[2]     ; rom_addr_ext[12] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.202      ;
+; -7.535 ; cntrl_reg[2]     ; rom_addr_ext[13] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.202      ;
+; -7.535 ; cntrl_reg[2]     ; rom_addr_ext[14] ; host_cs      ; host_cs     ; 1.000        ; 0.000      ; 8.202      ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Setup: 'gen'                                                                                                   ;
++--------+--------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+------------------+--------------+-------------+--------------+------------+------------+
+; -8.668 ; hreg[1]      ; vreg[2]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.668 ; hreg[1]      ; vreg[3]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.668 ; hreg[1]      ; vreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.668 ; hreg[1]      ; vreg[1]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.668 ; hreg[1]      ; vreg[8]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.668 ; hreg[1]      ; vreg[5]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.668 ; hreg[1]      ; vreg[4]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.668 ; hreg[1]      ; vreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.335      ;
+; -8.506 ; hreg[2]      ; vreg[2]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.506 ; hreg[2]      ; vreg[3]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.506 ; hreg[2]      ; vreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.506 ; hreg[2]      ; vreg[1]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.506 ; hreg[2]      ; vreg[8]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.506 ; hreg[2]      ; vreg[5]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.506 ; hreg[2]      ; vreg[4]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.506 ; hreg[2]      ; vreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 9.173      ;
+; -8.287 ; hreg[4]      ; vreg[2]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.287 ; hreg[4]      ; vreg[3]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.287 ; hreg[4]      ; vreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.287 ; hreg[4]      ; vreg[1]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.287 ; hreg[4]      ; vreg[8]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.287 ; hreg[4]      ; vreg[5]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.287 ; hreg[4]      ; vreg[4]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.287 ; hreg[4]      ; vreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.954      ;
+; -8.004 ; rom_reg[3]   ; rgb[5]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 8.671      ;
+; -7.960 ; hreg[0]      ; vreg[2]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.960 ; hreg[0]      ; vreg[3]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.960 ; hreg[0]      ; vreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.960 ; hreg[0]      ; vreg[1]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.960 ; hreg[0]      ; vreg[8]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.960 ; hreg[0]      ; vreg[5]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.960 ; hreg[0]      ; vreg[4]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.960 ; hreg[0]      ; vreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.627      ;
+; -7.944 ; cntrl_reg[3] ; rom_reg[2]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.700      ;
+; -7.943 ; cntrl_reg[3] ; rom_reg[4]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.699      ;
+; -7.942 ; cntrl_reg[3] ; rom_reg[1]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.698      ;
+; -7.941 ; cntrl_reg[3] ; rom_reg[7]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.697      ;
+; -7.934 ; cntrl_reg[3] ; rom_reg[5]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.690      ;
+; -7.934 ; cntrl_reg[3] ; rom_reg[6]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.690      ;
+; -7.933 ; cntrl_reg[3] ; rom_reg[0]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.689      ;
+; -7.862 ; rom_reg[6]   ; rgb[5]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 8.529      ;
+; -7.861 ; hreg[1]      ; hreg[6]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.528      ;
+; -7.756 ; hreg[7]      ; vreg[2]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.756 ; hreg[7]      ; vreg[3]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.756 ; hreg[7]      ; vreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.756 ; hreg[7]      ; vreg[1]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.756 ; hreg[7]      ; vreg[8]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.756 ; hreg[7]      ; vreg[5]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.756 ; hreg[7]      ; vreg[4]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.756 ; hreg[7]      ; vreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.423      ;
+; -7.699 ; hreg[2]      ; hreg[6]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.366      ;
+; -7.533 ; hreg[1]      ; blink_dev[4]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.200      ;
+; -7.533 ; hreg[1]      ; blink_dev[3]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.200      ;
+; -7.533 ; hreg[1]      ; blink_dev[2]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.200      ;
+; -7.533 ; hreg[1]      ; blink_dev[1]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.200      ;
+; -7.519 ; hreg[1]      ; hreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.186      ;
+; -7.518 ; hreg[1]      ; hreg[10]         ; gen          ; gen         ; 1.000        ; 0.000      ; 8.185      ;
+; -7.480 ; hreg[4]      ; hreg[6]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.147      ;
+; -7.479 ; hreg[1]      ; hreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.146      ;
+; -7.477 ; hreg[2]      ; rgb[5]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 8.144      ;
+; -7.459 ; rom_reg[3]   ; rgb[1]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 8.126      ;
+; -7.414 ; cntrl_reg[3] ; rom_reg[3]       ; host_cs      ; gen         ; 0.500        ; -3.411     ; 4.170      ;
+; -7.411 ; hreg[1]      ; vreg[7]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.078      ;
+; -7.411 ; hreg[1]      ; vreg[6]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.078      ;
+; -7.381 ; rom_reg[4]   ; rgb[5]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 8.048      ;
+; -7.371 ; hreg[2]      ; blink_dev[4]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.038      ;
+; -7.371 ; hreg[2]      ; blink_dev[3]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.038      ;
+; -7.371 ; hreg[2]      ; blink_dev[2]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.038      ;
+; -7.371 ; hreg[2]      ; blink_dev[1]     ; gen          ; gen         ; 1.000        ; 0.000      ; 8.038      ;
+; -7.357 ; hreg[2]      ; hreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 8.024      ;
+; -7.356 ; hreg[2]      ; hreg[10]         ; gen          ; gen         ; 1.000        ; 0.000      ; 8.023      ;
+; -7.334 ; hreg[1]      ; rgb[5]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 8.001      ;
+; -7.317 ; hreg[2]      ; hreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.984      ;
+; -7.317 ; rom_reg[6]   ; rgb[1]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 7.984      ;
+; -7.295 ; rom_reg[1]   ; rgb[5]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 7.962      ;
+; -7.250 ; rom_reg[3]   ; rgb[3]~reg0      ; gen          ; gen         ; 1.000        ; 0.000      ; 7.917      ;
+; -7.249 ; hreg[2]      ; vreg[7]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.916      ;
+; -7.249 ; hreg[2]      ; vreg[6]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.916      ;
+; -7.245 ; hreg[3]      ; sym_attr[1]      ; gen          ; gen         ; 1.000        ; 0.000      ; 7.912      ;
+; -7.245 ; hreg[3]      ; sym_attr[0]      ; gen          ; gen         ; 1.000        ; 0.000      ; 7.912      ;
+; -7.245 ; hreg[3]      ; rom_addr_int[9]  ; gen          ; gen         ; 1.000        ; 0.000      ; 7.912      ;
+; -7.245 ; hreg[3]      ; rom_addr_int[12] ; gen          ; gen         ; 1.000        ; 0.000      ; 7.912      ;
+; -7.222 ; vreg[0]      ; vreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.889      ;
+; -7.204 ; hreg[5]      ; vreg[2]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.204 ; hreg[5]      ; vreg[3]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.204 ; hreg[5]      ; vreg[9]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.204 ; hreg[5]      ; vreg[1]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.204 ; hreg[5]      ; vreg[8]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.204 ; hreg[5]      ; vreg[5]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.204 ; hreg[5]      ; vreg[4]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.204 ; hreg[5]      ; vreg[0]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.871      ;
+; -7.189 ; vreg[7]      ; blink_dev[4]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; vreg[7]      ; blink_dev[3]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; vreg[7]      ; blink_dev[2]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.189 ; vreg[7]      ; blink_dev[1]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.856      ;
+; -7.153 ; hreg[0]      ; hreg[6]          ; gen          ; gen         ; 1.000        ; 0.000      ; 7.820      ;
+; -7.152 ; hreg[4]      ; blink_dev[4]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.819      ;
+; -7.152 ; hreg[4]      ; blink_dev[3]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.819      ;
+; -7.152 ; hreg[4]      ; blink_dev[2]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.819      ;
+; -7.152 ; hreg[4]      ; blink_dev[1]     ; gen          ; gen         ; 1.000        ; 0.000      ; 7.819      ;
++--------+--------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Hold: 'gen'                                                                                                     ;
++-------+----------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+------------------+--------------+-------------+--------------+------------+------------+
+; 1.374 ; temp_reg1[7]   ; rom_addr_int[11] ; gen          ; gen         ; 0.000        ; 0.000      ; 1.595      ;
+; 1.411 ; vreg[1]        ; rom_addr_int[1]  ; gen          ; gen         ; 0.000        ; 0.000      ; 1.632      ;
+; 1.646 ; sym_attr[2]    ; rom_reg[3]       ; gen          ; gen         ; 0.000        ; 0.000      ; 1.867      ;
+; 1.649 ; blink_dev[4]   ; blink_dev[4]     ; gen          ; gen         ; 0.000        ; 0.000      ; 1.870      ;
+; 1.804 ; temp_reg1[2]   ; rom_addr_int[6]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.025      ;
+; 1.823 ; temp_reg1[6]   ; rom_addr_int[10] ; gen          ; gen         ; 0.000        ; 0.000      ; 2.044      ;
+; 1.865 ; vreg[2]        ; rom_addr_int[2]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.086      ;
+; 1.938 ; hs~reg0        ; hs~reg0          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.159      ;
+; 1.968 ; host_busy~reg0 ; temp_reg1[2]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.995 ; sym_attr[1]    ; sym_color[0]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.216      ;
+; 2.002 ; sym_attr[1]    ; sym_color[1]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.223      ;
+; 2.005 ; sym_attr[1]    ; sym_color[4]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.226      ;
+; 2.011 ; sym_attr[1]    ; sym_color[7]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.232      ;
+; 2.013 ; sym_attr[1]    ; sym_color[3]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.234      ;
+; 2.013 ; sym_attr[1]    ; sym_color[5]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.234      ;
+; 2.108 ; blink_dev[3]   ; blink_dev[3]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.329      ;
+; 2.116 ; vreg[8]        ; vreg[1]          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.152 ; blink_dev[0]   ; blink_dev[0]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.373      ;
+; 2.161 ; blink_dev[0]   ; blink_dev[1]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.382      ;
+; 2.165 ; sym_attr[2]    ; rom_reg[0]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.386      ;
+; 2.166 ; sym_attr[2]    ; rom_reg[5]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.387      ;
+; 2.166 ; sym_attr[2]    ; rom_reg[6]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.387      ;
+; 2.173 ; sym_attr[2]    ; rom_reg[7]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.394      ;
+; 2.174 ; sym_attr[2]    ; rom_reg[1]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.395      ;
+; 2.175 ; sym_attr[2]    ; rom_reg[4]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.396      ;
+; 2.176 ; sym_attr[2]    ; rom_reg[2]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.397      ;
+; 2.211 ; vs~reg0        ; vs~reg0          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.432      ;
+; 2.217 ; hreg[0]        ; ram_addr_int[12] ; gen          ; gen         ; 0.000        ; 0.000      ; 2.438      ;
+; 2.225 ; hreg[0]        ; ram_addr_int[13] ; gen          ; gen         ; 0.000        ; 0.000      ; 2.446      ;
+; 2.239 ; blink_dev[2]   ; blink_dev[2]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.460      ;
+; 2.239 ; blink_dev[1]   ; blink_dev[1]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.460      ;
+; 2.277 ; host_busy~reg0 ; temp_reg1[1]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.498      ;
+; 2.281 ; host_busy~reg0 ; temp_reg1[0]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.502      ;
+; 2.320 ; temp_reg1[1]   ; rom_addr_int[5]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.541      ;
+; 2.339 ; vreg[3]        ; rom_addr_int[3]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.560      ;
+; 2.371 ; temp_reg1[4]   ; rom_addr_int[8]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.592      ;
+; 2.486 ; hreg[4]        ; ram_addr_int[0]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.707      ;
+; 2.499 ; vreg[4]        ; ram_addr_int[7]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.720      ;
+; 2.568 ; hreg[3]        ; hs~reg0          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.789      ;
+; 2.580 ; hreg[9]        ; hs~reg0          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.801      ;
+; 2.584 ; vreg[8]        ; vreg[3]          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.805      ;
+; 2.584 ; vreg[8]        ; vreg[9]          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.805      ;
+; 2.584 ; vreg[0]        ; rom_addr_int[0]  ; gen          ; gen         ; 0.000        ; 0.000      ; 2.805      ;
+; 2.585 ; vreg[8]        ; vreg[2]          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.806      ;
+; 2.594 ; host_busy~reg0 ; rom_reg[5]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.815      ;
+; 2.594 ; host_busy~reg0 ; rom_reg[6]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.815      ;
+; 2.613 ; host_busy~reg0 ; rom_reg[4]       ; gen          ; gen         ; 0.000        ; 0.000      ; 2.834      ;
+; 2.621 ; vreg[0]        ; vreg[1]          ; gen          ; gen         ; 0.000        ; 0.000      ; 2.842      ;
+; 2.674 ; sym_attr[0]    ; sym_color[3]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.895      ;
+; 2.679 ; sym_attr[0]    ; sym_color[1]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.900      ;
+; 2.680 ; sym_attr[0]    ; sym_color[0]     ; gen          ; gen         ; 0.000        ; 0.000      ; 2.901      ;
+; 2.691 ; hreg[2]        ; ram_addr_int[12] ; gen          ; gen         ; 0.000        ; 0.000      ; 2.912      ;
+; 2.701 ; hreg[2]        ; ram_addr_int[13] ; gen          ; gen         ; 0.000        ; 0.000      ; 2.922      ;
+; 2.801 ; hreg[1]        ; ram_addr_int[12] ; gen          ; gen         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.812 ; hreg[1]        ; ram_addr_int[13] ; gen          ; gen         ; 0.000        ; 0.000      ; 3.033      ;
+; 2.856 ; vreg[7]        ; vreg[7]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.077      ;
+; 2.905 ; host_busy~reg0 ; rom_reg[0]       ; gen          ; gen         ; 0.000        ; 0.000      ; 3.126      ;
+; 2.908 ; host_busy~reg0 ; rom_reg[3]       ; gen          ; gen         ; 0.000        ; 0.000      ; 3.129      ;
+; 2.916 ; host_busy~reg0 ; rom_reg[7]       ; gen          ; gen         ; 0.000        ; 0.000      ; 3.137      ;
+; 2.918 ; host_busy~reg0 ; rom_reg[1]       ; gen          ; gen         ; 0.000        ; 0.000      ; 3.139      ;
+; 2.920 ; host_busy~reg0 ; rom_reg[2]       ; gen          ; gen         ; 0.000        ; 0.000      ; 3.141      ;
+; 2.921 ; vreg[4]        ; vreg[9]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.142      ;
+; 2.933 ; vreg[4]        ; vreg[3]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.154      ;
+; 2.934 ; vreg[4]        ; vreg[2]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.155      ;
+; 2.935 ; vreg[4]        ; vreg[1]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.156      ;
+; 2.940 ; blink_dev[3]   ; blink_dev[4]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.161      ;
+; 2.950 ; blink_dev[4]   ; sym_color[5]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.171      ;
+; 2.953 ; blink_dev[4]   ; sym_color[7]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.174      ;
+; 2.957 ; blink_dev[4]   ; sym_color[4]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.178      ;
+; 2.970 ; vreg[5]        ; vs~reg0          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.191      ;
+; 2.993 ; blink_dev[0]   ; blink_dev[2]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.214      ;
+; 2.998 ; vreg[6]        ; vreg[6]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.219      ;
+; 3.030 ; temp_reg1[5]   ; rom_addr_int[9]  ; gen          ; gen         ; 0.000        ; 0.000      ; 3.251      ;
+; 3.064 ; hreg[9]        ; ram_addr_int[5]  ; gen          ; gen         ; 0.000        ; 0.000      ; 3.285      ;
+; 3.072 ; temp_reg1[0]   ; rom_addr_int[4]  ; gen          ; gen         ; 0.000        ; 0.000      ; 3.293      ;
+; 3.087 ; hreg[6]        ; ram_addr_int[2]  ; gen          ; gen         ; 0.000        ; 0.000      ; 3.308      ;
+; 3.089 ; vreg[0]        ; vreg[3]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.310      ;
+; 3.089 ; vreg[0]        ; vreg[9]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.310      ;
+; 3.090 ; vreg[0]        ; vreg[2]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.311      ;
+; 3.104 ; blink_dev[0]   ; blink_dev[3]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.325      ;
+; 3.112 ; hreg[3]        ; blink_dev[0]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.333      ;
+; 3.123 ; hreg[8]        ; ram_addr_int[4]  ; gen          ; gen         ; 0.000        ; 0.000      ; 3.344      ;
+; 3.148 ; sym_attr[0]    ; sym_color[2]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.369      ;
+; 3.179 ; blink_dev[1]   ; blink_dev[2]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.400      ;
+; 3.179 ; blink_dev[2]   ; blink_dev[3]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.400      ;
+; 3.215 ; blink_dev[0]   ; blink_dev[4]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.436      ;
+; 3.233 ; vreg[5]        ; host_busy~reg0   ; gen          ; gen         ; 0.000        ; 0.000      ; 3.454      ;
+; 3.236 ; host_busy~reg0 ; rom_addr_int[12] ; gen          ; gen         ; 0.000        ; 0.000      ; 3.457      ;
+; 3.290 ; blink_dev[1]   ; blink_dev[3]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.511      ;
+; 3.290 ; blink_dev[2]   ; blink_dev[4]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.511      ;
+; 3.298 ; sym_attr[1]    ; sym_color[2]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.519      ;
+; 3.302 ; hreg[4]        ; hreg[4]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.523      ;
+; 3.350 ; vreg[9]        ; vreg[1]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.571      ;
+; 3.363 ; hreg[9]        ; hreg[9]          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.584      ;
+; 3.401 ; blink_dev[1]   ; blink_dev[4]     ; gen          ; gen         ; 0.000        ; 0.000      ; 3.622      ;
+; 3.493 ; host_busy~reg0 ; rom_addr_int[15] ; gen          ; gen         ; 0.000        ; 0.000      ; 3.714      ;
+; 3.501 ; host_busy~reg0 ; rom_addr_int[16] ; gen          ; gen         ; 0.000        ; 0.000      ; 3.722      ;
+; 3.505 ; hreg[6]        ; hs~reg0          ; gen          ; gen         ; 0.000        ; 0.000      ; 3.726      ;
+; 3.532 ; vreg[5]        ; ram_addr_int[8]  ; gen          ; gen         ; 0.000        ; 0.000      ; 3.753      ;
+; 3.614 ; sym_color[6]   ; rgb[2]~reg0      ; gen          ; gen         ; 0.000        ; 0.000      ; 3.835      ;
++-------+----------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Hold: 'host_cs'                                                                                                   ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 2.908 ; cntrl_reg[2]     ; cntrl_reg[2]     ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 3.129      ;
+; 3.125 ; ram_addr_ext[5]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 3.346      ;
+; 3.602 ; ram_addr_ext[6]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 3.823      ;
+; 3.604 ; ram_addr_ext[13] ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 3.825      ;
+; 3.674 ; ram_addr_ext[2]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 3.895      ;
+; 3.813 ; ram_addr_ext[13] ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.034      ;
+; 4.137 ; ram_addr_ext[2]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.358      ;
+; 4.409 ; ram_addr_ext[5]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.630      ;
+; 4.456 ; ram_addr_ext[12] ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.677      ;
+; 4.535 ; ram_addr_ext[4]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.756      ;
+; 4.708 ; ram_addr_ext[11] ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.929      ;
+; 4.725 ; ram_addr_ext[2]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.946      ;
+; 4.736 ; ram_addr_ext[13] ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 4.957      ;
+; 4.828 ; ram_addr_ext[4]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.049      ;
+; 4.829 ; ram_addr_ext[11] ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.050      ;
+; 4.830 ; ram_addr_ext[11] ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.051      ;
+; 4.831 ; ram_addr_ext[11] ; ram_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.052      ;
+; 5.009 ; ram_addr_ext[13] ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.230      ;
+; 5.011 ; ram_addr_ext[13] ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.232      ;
+; 5.016 ; ram_addr_ext[4]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.237      ;
+; 5.016 ; ram_addr_ext[13] ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.237      ;
+; 5.017 ; ram_addr_ext[4]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.238      ;
+; 5.017 ; ram_addr_ext[13] ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.238      ;
+; 5.018 ; ram_addr_ext[4]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.239      ;
+; 5.112 ; ram_addr_ext[4]  ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.333      ;
+; 5.113 ; ram_addr_ext[4]  ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.334      ;
+; 5.114 ; ram_addr_ext[4]  ; ram_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.335      ;
+; 5.146 ; cntrl_reg[2]     ; cntrl_reg[3]     ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.367      ;
+; 5.146 ; cntrl_reg[2]     ; cntrl_reg[4]     ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.367      ;
+; 5.150 ; cntrl_reg[2]     ; rom_addr_ext[8]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.371      ;
+; 5.150 ; cntrl_reg[2]     ; rom_addr_ext[10] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.371      ;
+; 5.158 ; ram_addr_ext[2]  ; ram_addr_ext[3]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.379      ;
+; 5.263 ; ram_addr_ext[7]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.484      ;
+; 5.290 ; ram_addr_ext[1]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.511      ;
+; 5.363 ; ram_addr_ext[3]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.584      ;
+; 5.426 ; ram_addr_ext[8]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.647      ;
+; 5.571 ; ram_addr_ext[0]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.792      ;
+; 5.583 ; ram_addr_ext[1]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.804      ;
+; 5.632 ; ram_addr_ext[3]  ; ram_addr_ext[3]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.853      ;
+; 5.653 ; ram_addr_ext[10] ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.874      ;
+; 5.668 ; ram_addr_ext[11] ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.889      ;
+; 5.736 ; ram_addr_ext[2]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.957      ;
+; 5.747 ; ram_addr_ext[4]  ; ram_addr_ext[3]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.968      ;
+; 5.771 ; ram_addr_ext[1]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.992      ;
+; 5.772 ; ram_addr_ext[1]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.993      ;
+; 5.773 ; ram_addr_ext[1]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 5.994      ;
+; 5.864 ; ram_addr_ext[0]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.085      ;
+; 5.867 ; ram_addr_ext[1]  ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.088      ;
+; 5.867 ; ram_addr_ext[11] ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.088      ;
+; 5.868 ; ram_addr_ext[1]  ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.089      ;
+; 5.869 ; ram_addr_ext[1]  ; ram_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.090      ;
+; 5.876 ; ram_addr_ext[4]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.097      ;
+; 5.909 ; ram_addr_ext[7]  ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.130      ;
+; 5.910 ; ram_addr_ext[7]  ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.131      ;
+; 5.911 ; ram_addr_ext[7]  ; ram_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.132      ;
+; 5.926 ; ram_addr_ext[3]  ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.147      ;
+; 5.950 ; ram_addr_ext[8]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.171      ;
+; 5.951 ; ram_addr_ext[3]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.172      ;
+; 5.960 ; ram_addr_ext[4]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.181      ;
+; 5.963 ; ram_addr_ext[7]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.184      ;
+; 6.000 ; ram_addr_ext[12] ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.221      ;
+; 6.029 ; ram_addr_ext[2]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.250      ;
+; 6.047 ; ram_addr_ext[4]  ; ram_addr_ext[11] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.268      ;
+; 6.052 ; ram_addr_ext[0]  ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.273      ;
+; 6.053 ; ram_addr_ext[0]  ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.274      ;
+; 6.054 ; ram_addr_ext[0]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.275      ;
+; 6.059 ; ram_addr_ext[6]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.280      ;
+; 6.076 ; ram_addr_ext[10] ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.297      ;
+; 6.077 ; ram_addr_ext[10] ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.298      ;
+; 6.078 ; ram_addr_ext[10] ; ram_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.299      ;
+; 6.083 ; ram_addr_ext[11] ; ram_addr_ext[3]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.304      ;
+; 6.090 ; ram_addr_ext[5]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.311      ;
+; 6.110 ; ram_addr_ext[6]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.331      ;
+; 6.119 ; ram_addr_ext[4]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.340      ;
+; 6.141 ; ram_addr_ext[5]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.362      ;
+; 6.148 ; ram_addr_ext[0]  ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.369      ;
+; 6.149 ; ram_addr_ext[0]  ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.370      ;
+; 6.150 ; ram_addr_ext[0]  ; ram_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.371      ;
+; 6.183 ; ram_addr_ext[11] ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.404      ;
+; 6.184 ; ram_addr_ext[11] ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.405      ;
+; 6.218 ; cntrl_reg[2]     ; ram_addr_ext[9]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.439      ;
+; 6.218 ; cntrl_reg[2]     ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.439      ;
+; 6.219 ; ram_addr_ext[3]  ; ram_addr_ext[13] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.440      ;
+; 6.235 ; ram_addr_ext[4]  ; ram_addr_ext[10] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.456      ;
+; 6.313 ; cntrl_reg[2]     ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.534      ;
+; 6.313 ; cntrl_reg[2]     ; ram_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.534      ;
+; 6.313 ; cntrl_reg[2]     ; ram_addr_ext[6]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.534      ;
+; 6.313 ; ram_addr_ext[2]  ; ram_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.534      ;
+; 6.314 ; ram_addr_ext[2]  ; ram_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.535      ;
+; 6.315 ; ram_addr_ext[2]  ; ram_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.536      ;
+; 6.349 ; cntrl_reg[2]     ; rom_addr_ext[0]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.570      ;
+; 6.349 ; cntrl_reg[2]     ; rom_addr_ext[1]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.570      ;
+; 6.349 ; cntrl_reg[2]     ; rom_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.570      ;
+; 6.349 ; cntrl_reg[2]     ; rom_addr_ext[3]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.570      ;
+; 6.349 ; cntrl_reg[2]     ; rom_addr_ext[4]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.570      ;
+; 6.349 ; cntrl_reg[2]     ; rom_addr_ext[5]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.570      ;
+; 6.406 ; ram_addr_ext[2]  ; ram_addr_ext[12] ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.627      ;
+; 6.409 ; ram_addr_ext[3]  ; ram_addr_ext[2]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.630      ;
+; 6.436 ; ram_addr_ext[7]  ; ram_addr_ext[8]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.657      ;
+; 6.439 ; ram_addr_ext[6]  ; ram_addr_ext[7]  ; host_cs      ; host_cs     ; 0.000        ; 0.000      ; 6.660      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'gen'                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target           ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; gen   ; Rise       ; gen              ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; blink_dev[0]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; blink_dev[0]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; blink_dev[1]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; blink_dev[1]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; blink_dev[2]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; blink_dev[2]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; blink_dev[3]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; blink_dev[3]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; blink_dev[4]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; blink_dev[4]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; host_busy~reg0   ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; host_busy~reg0   ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[0]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[0]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[10]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[10]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[1]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[1]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[2]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[2]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[3]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[3]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[4]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[4]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[5]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[5]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[6]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[6]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[7]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[7]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[8]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[8]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hreg[9]          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hreg[9]          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; hs~reg0          ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; hs~reg0          ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[10] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[10] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[11] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[11] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[12] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[12] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[13] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[13] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; ram_addr_int[9]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; ram_addr_int[9]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rgb[0]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rgb[0]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rgb[1]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rgb[1]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rgb[2]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rgb[2]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rgb[3]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rgb[3]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rgb[4]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rgb[4]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rgb[5]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rgb[5]~reg0      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[10] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[10] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[11] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[11] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[12] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[12] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[13] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[13] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[14] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[14] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[15] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[15] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[16] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[16] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; gen   ; Fall       ; rom_addr_int[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; gen   ; Fall       ; rom_addr_int[4]  ;
++--------+--------------+----------------+------------------+-------+------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'host_cs'                                                                          ;
++--------+--------------+----------------+------------------+---------+------------+----------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target               ;
++--------+--------------+----------------+------------------+---------+------------+----------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; host_cs ; Rise       ; host_cs              ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; cntrl_reg[2]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; cntrl_reg[2]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; cntrl_reg[3]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; cntrl_reg[3]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; cntrl_reg[4]         ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; cntrl_reg[4]         ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[9]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[9]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[0]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[10]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[11]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[12]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[13]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[14]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[14]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[15]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[15]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[16]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[16]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[1]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[2]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[3]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[4]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[5]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[6]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[7]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[8]      ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; host_cs ; Rise       ; rom_addr_ext[9]      ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; host_cs ; Rise       ; rom_addr_ext[9]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; cntrl_reg[2]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; cntrl_reg[2]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; cntrl_reg[3]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; cntrl_reg[3]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; cntrl_reg[4]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; cntrl_reg[4]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; host_cs|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; host_cs|combout      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[4]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[5]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[6]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; host_cs ; Rise       ; ram_addr_ext[6]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; host_cs ; Rise       ; ram_addr_ext[7]|clk  ;
++--------+--------------+----------------+------------------+---------+------------+----------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; host_reset    ; gen        ; 8.253 ; 8.253 ; Fall       ; gen             ;
+; ram_data[*]   ; gen        ; 8.316 ; 8.316 ; Fall       ; gen             ;
+;  ram_data[0]  ; gen        ; 5.278 ; 5.278 ; Fall       ; gen             ;
+;  ram_data[1]  ; gen        ; 6.930 ; 6.930 ; Fall       ; gen             ;
+;  ram_data[2]  ; gen        ; 4.461 ; 4.461 ; Fall       ; gen             ;
+;  ram_data[3]  ; gen        ; 5.285 ; 5.285 ; Fall       ; gen             ;
+;  ram_data[4]  ; gen        ; 7.060 ; 7.060 ; Fall       ; gen             ;
+;  ram_data[5]  ; gen        ; 8.316 ; 8.316 ; Fall       ; gen             ;
+;  ram_data[6]  ; gen        ; 5.223 ; 5.223 ; Fall       ; gen             ;
+;  ram_data[7]  ; gen        ; 5.164 ; 5.164 ; Fall       ; gen             ;
+; rom_data[*]   ; gen        ; 4.034 ; 4.034 ; Fall       ; gen             ;
+;  rom_data[0]  ; gen        ; 2.609 ; 2.609 ; Fall       ; gen             ;
+;  rom_data[1]  ; gen        ; 2.562 ; 2.562 ; Fall       ; gen             ;
+;  rom_data[2]  ; gen        ; 2.768 ; 2.768 ; Fall       ; gen             ;
+;  rom_data[3]  ; gen        ; 4.034 ; 4.034 ; Fall       ; gen             ;
+;  rom_data[4]  ; gen        ; 2.886 ; 2.886 ; Fall       ; gen             ;
+;  rom_data[5]  ; gen        ; 3.008 ; 3.008 ; Fall       ; gen             ;
+;  rom_data[6]  ; gen        ; 2.917 ; 2.917 ; Fall       ; gen             ;
+;  rom_data[7]  ; gen        ; 2.778 ; 2.778 ; Fall       ; gen             ;
+; host_ad       ; host_cs    ; 7.885 ; 7.885 ; Rise       ; host_cs         ;
+; host_data[*]  ; host_cs    ; 8.332 ; 8.332 ; Rise       ; host_cs         ;
+;  host_data[0] ; host_cs    ; 3.568 ; 3.568 ; Rise       ; host_cs         ;
+;  host_data[1] ; host_cs    ; 4.438 ; 4.438 ; Rise       ; host_cs         ;
+;  host_data[2] ; host_cs    ; 4.790 ; 4.790 ; Rise       ; host_cs         ;
+;  host_data[3] ; host_cs    ; 2.219 ; 2.219 ; Rise       ; host_cs         ;
+;  host_data[4] ; host_cs    ; 1.343 ; 1.343 ; Rise       ; host_cs         ;
+;  host_data[5] ; host_cs    ; 7.712 ; 7.712 ; Rise       ; host_cs         ;
+;  host_data[6] ; host_cs    ; 8.332 ; 8.332 ; Rise       ; host_cs         ;
+;  host_data[7] ; host_cs    ; 4.537 ; 4.537 ; Rise       ; host_cs         ;
+; host_reset    ; host_cs    ; 4.145 ; 4.145 ; Rise       ; host_cs         ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; host_reset    ; gen        ; -3.077 ; -3.077 ; Fall       ; gen             ;
+; ram_data[*]   ; gen        ; -1.958 ; -1.958 ; Fall       ; gen             ;
+;  ram_data[0]  ; gen        ; -2.234 ; -2.234 ; Fall       ; gen             ;
+;  ram_data[1]  ; gen        ; -2.196 ; -2.196 ; Fall       ; gen             ;
+;  ram_data[2]  ; gen        ; -1.958 ; -1.958 ; Fall       ; gen             ;
+;  ram_data[3]  ; gen        ; -2.320 ; -2.320 ; Fall       ; gen             ;
+;  ram_data[4]  ; gen        ; -3.044 ; -3.044 ; Fall       ; gen             ;
+;  ram_data[5]  ; gen        ; -3.867 ; -3.867 ; Fall       ; gen             ;
+;  ram_data[6]  ; gen        ; -2.210 ; -2.210 ; Fall       ; gen             ;
+;  ram_data[7]  ; gen        ; -2.268 ; -2.268 ; Fall       ; gen             ;
+; rom_data[*]   ; gen        ; -2.008 ; -2.008 ; Fall       ; gen             ;
+;  rom_data[0]  ; gen        ; -2.055 ; -2.055 ; Fall       ; gen             ;
+;  rom_data[1]  ; gen        ; -2.008 ; -2.008 ; Fall       ; gen             ;
+;  rom_data[2]  ; gen        ; -2.214 ; -2.214 ; Fall       ; gen             ;
+;  rom_data[3]  ; gen        ; -3.480 ; -3.480 ; Fall       ; gen             ;
+;  rom_data[4]  ; gen        ; -2.332 ; -2.332 ; Fall       ; gen             ;
+;  rom_data[5]  ; gen        ; -2.454 ; -2.454 ; Fall       ; gen             ;
+;  rom_data[6]  ; gen        ; -2.363 ; -2.363 ; Fall       ; gen             ;
+;  rom_data[7]  ; gen        ; -2.224 ; -2.224 ; Fall       ; gen             ;
+; host_ad       ; host_cs    ; -2.083 ; -2.083 ; Rise       ; host_cs         ;
+; host_data[*]  ; host_cs    ; 1.085  ; 1.085  ; Rise       ; host_cs         ;
+;  host_data[0] ; host_cs    ; 0.997  ; 0.997  ; Rise       ; host_cs         ;
+;  host_data[1] ; host_cs    ; 1.017  ; 1.017  ; Rise       ; host_cs         ;
+;  host_data[2] ; host_cs    ; 0.127  ; 0.127  ; Rise       ; host_cs         ;
+;  host_data[3] ; host_cs    ; -0.070 ; -0.070 ; Rise       ; host_cs         ;
+;  host_data[4] ; host_cs    ; 0.970  ; 0.970  ; Rise       ; host_cs         ;
+;  host_data[5] ; host_cs    ; 0.496  ; 0.496  ; Rise       ; host_cs         ;
+;  host_data[6] ; host_cs    ; 1.085  ; 1.085  ; Rise       ; host_cs         ;
+;  host_data[7] ; host_cs    ; -1.136 ; -1.136 ; Rise       ; host_cs         ;
+; host_reset    ; host_cs    ; -3.591 ; -3.591 ; Rise       ; host_cs         ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; host_busy     ; gen        ; 11.214 ; 11.214 ; Fall       ; gen             ;
+; hs            ; gen        ; 8.402  ; 8.402  ; Fall       ; gen             ;
+; ram_addr[*]   ; gen        ; 13.370 ; 13.370 ; Fall       ; gen             ;
+;  ram_addr[0]  ; gen        ; 12.167 ; 12.167 ; Fall       ; gen             ;
+;  ram_addr[1]  ; gen        ; 12.718 ; 12.718 ; Fall       ; gen             ;
+;  ram_addr[2]  ; gen        ; 12.639 ; 12.639 ; Fall       ; gen             ;
+;  ram_addr[3]  ; gen        ; 11.401 ; 11.401 ; Fall       ; gen             ;
+;  ram_addr[4]  ; gen        ; 12.645 ; 12.645 ; Fall       ; gen             ;
+;  ram_addr[5]  ; gen        ; 12.663 ; 12.663 ; Fall       ; gen             ;
+;  ram_addr[6]  ; gen        ; 12.720 ; 12.720 ; Fall       ; gen             ;
+;  ram_addr[7]  ; gen        ; 11.415 ; 11.415 ; Fall       ; gen             ;
+;  ram_addr[8]  ; gen        ; 12.635 ; 12.635 ; Fall       ; gen             ;
+;  ram_addr[9]  ; gen        ; 11.567 ; 11.567 ; Fall       ; gen             ;
+;  ram_addr[10] ; gen        ; 13.370 ; 13.370 ; Fall       ; gen             ;
+;  ram_addr[11] ; gen        ; 11.402 ; 11.402 ; Fall       ; gen             ;
+;  ram_addr[12] ; gen        ; 12.535 ; 12.535 ; Fall       ; gen             ;
+;  ram_addr[13] ; gen        ; 12.807 ; 12.807 ; Fall       ; gen             ;
+; ram_we        ; gen        ; 12.941 ; 12.941 ; Fall       ; gen             ;
+; rgb[*]        ; gen        ; 9.866  ; 9.866  ; Fall       ; gen             ;
+;  rgb[0]       ; gen        ; 8.402  ; 8.402  ; Fall       ; gen             ;
+;  rgb[1]       ; gen        ; 9.190  ; 9.190  ; Fall       ; gen             ;
+;  rgb[2]       ; gen        ; 9.866  ; 9.866  ; Fall       ; gen             ;
+;  rgb[3]       ; gen        ; 9.803  ; 9.803  ; Fall       ; gen             ;
+;  rgb[4]       ; gen        ; 9.062  ; 9.062  ; Fall       ; gen             ;
+;  rgb[5]       ; gen        ; 8.467  ; 8.467  ; Fall       ; gen             ;
+; rom_addr[*]   ; gen        ; 12.809 ; 12.809 ; Fall       ; gen             ;
+;  rom_addr[0]  ; gen        ; 11.684 ; 11.684 ; Fall       ; gen             ;
+;  rom_addr[1]  ; gen        ; 11.794 ; 11.794 ; Fall       ; gen             ;
+;  rom_addr[2]  ; gen        ; 10.621 ; 10.621 ; Fall       ; gen             ;
+;  rom_addr[3]  ; gen        ; 9.926  ; 9.926  ; Fall       ; gen             ;
+;  rom_addr[4]  ; gen        ; 11.778 ; 11.778 ; Fall       ; gen             ;
+;  rom_addr[5]  ; gen        ; 11.727 ; 11.727 ; Fall       ; gen             ;
+;  rom_addr[6]  ; gen        ; 12.278 ; 12.278 ; Fall       ; gen             ;
+;  rom_addr[7]  ; gen        ; 11.471 ; 11.471 ; Fall       ; gen             ;
+;  rom_addr[8]  ; gen        ; 11.811 ; 11.811 ; Fall       ; gen             ;
+;  rom_addr[9]  ; gen        ; 11.829 ; 11.829 ; Fall       ; gen             ;
+;  rom_addr[10] ; gen        ; 11.915 ; 11.915 ; Fall       ; gen             ;
+;  rom_addr[11] ; gen        ; 11.812 ; 11.812 ; Fall       ; gen             ;
+;  rom_addr[12] ; gen        ; 12.427 ; 12.427 ; Fall       ; gen             ;
+;  rom_addr[13] ; gen        ; 9.933  ; 9.933  ; Fall       ; gen             ;
+;  rom_addr[14] ; gen        ; 10.755 ; 10.755 ; Fall       ; gen             ;
+;  rom_addr[15] ; gen        ; 12.263 ; 12.263 ; Fall       ; gen             ;
+;  rom_addr[16] ; gen        ; 12.809 ; 12.809 ; Fall       ; gen             ;
+; rom_oe        ; gen        ; 14.335 ; 14.335 ; Fall       ; gen             ;
+; rom_we        ; gen        ; 14.322 ; 14.322 ; Fall       ; gen             ;
+; vs            ; gen        ; 8.634  ; 8.634  ; Fall       ; gen             ;
+; ram_addr[*]   ; host_cs    ; 18.191 ; 18.191 ; Rise       ; host_cs         ;
+;  ram_addr[0]  ; host_cs    ; 14.971 ; 14.971 ; Rise       ; host_cs         ;
+;  ram_addr[1]  ; host_cs    ; 17.214 ; 17.214 ; Rise       ; host_cs         ;
+;  ram_addr[2]  ; host_cs    ; 15.084 ; 15.084 ; Rise       ; host_cs         ;
+;  ram_addr[3]  ; host_cs    ; 13.787 ; 13.787 ; Rise       ; host_cs         ;
+;  ram_addr[4]  ; host_cs    ; 18.191 ; 18.191 ; Rise       ; host_cs         ;
+;  ram_addr[5]  ; host_cs    ; 15.979 ; 15.979 ; Rise       ; host_cs         ;
+;  ram_addr[6]  ; host_cs    ; 16.981 ; 16.981 ; Rise       ; host_cs         ;
+;  ram_addr[7]  ; host_cs    ; 16.997 ; 16.997 ; Rise       ; host_cs         ;
+;  ram_addr[8]  ; host_cs    ; 13.845 ; 13.845 ; Rise       ; host_cs         ;
+;  ram_addr[9]  ; host_cs    ; 13.342 ; 13.342 ; Rise       ; host_cs         ;
+;  ram_addr[10] ; host_cs    ; 16.083 ; 16.083 ; Rise       ; host_cs         ;
+;  ram_addr[11] ; host_cs    ; 14.384 ; 14.384 ; Rise       ; host_cs         ;
+;  ram_addr[12] ; host_cs    ; 15.221 ; 15.221 ; Rise       ; host_cs         ;
+;  ram_addr[13] ; host_cs    ; 14.933 ; 14.933 ; Rise       ; host_cs         ;
+; ram_we        ; host_cs    ; 15.882 ; 15.882 ; Rise       ; host_cs         ;
+; rom_addr[*]   ; host_cs    ; 16.954 ; 16.954 ; Rise       ; host_cs         ;
+;  rom_addr[0]  ; host_cs    ; 13.636 ; 13.636 ; Rise       ; host_cs         ;
+;  rom_addr[1]  ; host_cs    ; 14.869 ; 14.869 ; Rise       ; host_cs         ;
+;  rom_addr[2]  ; host_cs    ; 13.085 ; 13.085 ; Rise       ; host_cs         ;
+;  rom_addr[3]  ; host_cs    ; 13.621 ; 13.621 ; Rise       ; host_cs         ;
+;  rom_addr[4]  ; host_cs    ; 15.305 ; 15.305 ; Rise       ; host_cs         ;
+;  rom_addr[5]  ; host_cs    ; 14.728 ; 14.728 ; Rise       ; host_cs         ;
+;  rom_addr[6]  ; host_cs    ; 14.889 ; 14.889 ; Rise       ; host_cs         ;
+;  rom_addr[7]  ; host_cs    ; 15.264 ; 15.264 ; Rise       ; host_cs         ;
+;  rom_addr[8]  ; host_cs    ; 16.593 ; 16.593 ; Rise       ; host_cs         ;
+;  rom_addr[9]  ; host_cs    ; 14.910 ; 14.910 ; Rise       ; host_cs         ;
+;  rom_addr[10] ; host_cs    ; 15.367 ; 15.367 ; Rise       ; host_cs         ;
+;  rom_addr[11] ; host_cs    ; 14.829 ; 14.829 ; Rise       ; host_cs         ;
+;  rom_addr[12] ; host_cs    ; 16.245 ; 16.245 ; Rise       ; host_cs         ;
+;  rom_addr[13] ; host_cs    ; 16.670 ; 16.670 ; Rise       ; host_cs         ;
+;  rom_addr[14] ; host_cs    ; 16.954 ; 16.954 ; Rise       ; host_cs         ;
+;  rom_addr[15] ; host_cs    ; 16.266 ; 16.266 ; Rise       ; host_cs         ;
+;  rom_addr[16] ; host_cs    ; 16.350 ; 16.350 ; Rise       ; host_cs         ;
+; rom_oe        ; host_cs    ; 17.087 ; 17.087 ; Rise       ; host_cs         ;
+; rom_we        ; host_cs    ; 17.074 ; 17.074 ; Rise       ; host_cs         ;
+; ram_we        ; host_cs    ; 11.066 ; 11.066 ; Fall       ; host_cs         ;
+; rom_oe        ; host_cs    ; 10.845 ; 10.845 ; Fall       ; host_cs         ;
+; rom_we        ; host_cs    ; 10.832 ; 10.832 ; Fall       ; host_cs         ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; host_busy     ; gen        ; 11.214 ; 11.214 ; Fall       ; gen             ;
+; hs            ; gen        ; 8.402  ; 8.402  ; Fall       ; gen             ;
+; ram_addr[*]   ; gen        ; 7.753  ; 7.753  ; Fall       ; gen             ;
+;  ram_addr[0]  ; gen        ; 9.010  ; 9.010  ; Fall       ; gen             ;
+;  ram_addr[1]  ; gen        ; 9.029  ; 9.029  ; Fall       ; gen             ;
+;  ram_addr[2]  ; gen        ; 8.823  ; 8.823  ; Fall       ; gen             ;
+;  ram_addr[3]  ; gen        ; 7.758  ; 7.758  ; Fall       ; gen             ;
+;  ram_addr[4]  ; gen        ; 8.840  ; 8.840  ; Fall       ; gen             ;
+;  ram_addr[5]  ; gen        ; 8.858  ; 8.858  ; Fall       ; gen             ;
+;  ram_addr[6]  ; gen        ; 8.915  ; 8.915  ; Fall       ; gen             ;
+;  ram_addr[7]  ; gen        ; 7.767  ; 7.767  ; Fall       ; gen             ;
+;  ram_addr[8]  ; gen        ; 8.833  ; 8.833  ; Fall       ; gen             ;
+;  ram_addr[9]  ; gen        ; 7.753  ; 7.753  ; Fall       ; gen             ;
+;  ram_addr[10] ; gen        ; 9.557  ; 9.557  ; Fall       ; gen             ;
+;  ram_addr[11] ; gen        ; 7.753  ; 7.753  ; Fall       ; gen             ;
+;  ram_addr[12] ; gen        ; 11.192 ; 11.192 ; Fall       ; gen             ;
+;  ram_addr[13] ; gen        ; 10.324 ; 10.324 ; Fall       ; gen             ;
+; ram_we        ; gen        ; 12.941 ; 12.941 ; Fall       ; gen             ;
+; rgb[*]        ; gen        ; 8.402  ; 8.402  ; Fall       ; gen             ;
+;  rgb[0]       ; gen        ; 8.402  ; 8.402  ; Fall       ; gen             ;
+;  rgb[1]       ; gen        ; 9.190  ; 9.190  ; Fall       ; gen             ;
+;  rgb[2]       ; gen        ; 9.866  ; 9.866  ; Fall       ; gen             ;
+;  rgb[3]       ; gen        ; 9.803  ; 9.803  ; Fall       ; gen             ;
+;  rgb[4]       ; gen        ; 9.062  ; 9.062  ; Fall       ; gen             ;
+;  rgb[5]       ; gen        ; 8.467  ; 8.467  ; Fall       ; gen             ;
+; rom_addr[*]   ; gen        ; 9.926  ; 9.926  ; Fall       ; gen             ;
+;  rom_addr[0]  ; gen        ; 11.684 ; 11.684 ; Fall       ; gen             ;
+;  rom_addr[1]  ; gen        ; 11.794 ; 11.794 ; Fall       ; gen             ;
+;  rom_addr[2]  ; gen        ; 10.621 ; 10.621 ; Fall       ; gen             ;
+;  rom_addr[3]  ; gen        ; 9.926  ; 9.926  ; Fall       ; gen             ;
+;  rom_addr[4]  ; gen        ; 11.778 ; 11.778 ; Fall       ; gen             ;
+;  rom_addr[5]  ; gen        ; 11.727 ; 11.727 ; Fall       ; gen             ;
+;  rom_addr[6]  ; gen        ; 12.278 ; 12.278 ; Fall       ; gen             ;
+;  rom_addr[7]  ; gen        ; 11.471 ; 11.471 ; Fall       ; gen             ;
+;  rom_addr[8]  ; gen        ; 11.811 ; 11.811 ; Fall       ; gen             ;
+;  rom_addr[9]  ; gen        ; 11.829 ; 11.829 ; Fall       ; gen             ;
+;  rom_addr[10] ; gen        ; 11.915 ; 11.915 ; Fall       ; gen             ;
+;  rom_addr[11] ; gen        ; 11.812 ; 11.812 ; Fall       ; gen             ;
+;  rom_addr[12] ; gen        ; 12.427 ; 12.427 ; Fall       ; gen             ;
+;  rom_addr[13] ; gen        ; 9.933  ; 9.933  ; Fall       ; gen             ;
+;  rom_addr[14] ; gen        ; 10.755 ; 10.755 ; Fall       ; gen             ;
+;  rom_addr[15] ; gen        ; 12.263 ; 12.263 ; Fall       ; gen             ;
+;  rom_addr[16] ; gen        ; 12.809 ; 12.809 ; Fall       ; gen             ;
+; rom_oe        ; gen        ; 14.335 ; 14.335 ; Fall       ; gen             ;
+; rom_we        ; gen        ; 14.322 ; 14.322 ; Fall       ; gen             ;
+; vs            ; gen        ; 8.634  ; 8.634  ; Fall       ; gen             ;
+; ram_addr[*]   ; host_cs    ; 13.342 ; 13.342 ; Rise       ; host_cs         ;
+;  ram_addr[0]  ; host_cs    ; 14.971 ; 14.971 ; Rise       ; host_cs         ;
+;  ram_addr[1]  ; host_cs    ; 17.214 ; 17.214 ; Rise       ; host_cs         ;
+;  ram_addr[2]  ; host_cs    ; 15.084 ; 15.084 ; Rise       ; host_cs         ;
+;  ram_addr[3]  ; host_cs    ; 13.787 ; 13.787 ; Rise       ; host_cs         ;
+;  ram_addr[4]  ; host_cs    ; 18.191 ; 18.191 ; Rise       ; host_cs         ;
+;  ram_addr[5]  ; host_cs    ; 15.979 ; 15.979 ; Rise       ; host_cs         ;
+;  ram_addr[6]  ; host_cs    ; 16.981 ; 16.981 ; Rise       ; host_cs         ;
+;  ram_addr[7]  ; host_cs    ; 16.997 ; 16.997 ; Rise       ; host_cs         ;
+;  ram_addr[8]  ; host_cs    ; 13.845 ; 13.845 ; Rise       ; host_cs         ;
+;  ram_addr[9]  ; host_cs    ; 13.342 ; 13.342 ; Rise       ; host_cs         ;
+;  ram_addr[10] ; host_cs    ; 16.083 ; 16.083 ; Rise       ; host_cs         ;
+;  ram_addr[11] ; host_cs    ; 14.384 ; 14.384 ; Rise       ; host_cs         ;
+;  ram_addr[12] ; host_cs    ; 15.221 ; 15.221 ; Rise       ; host_cs         ;
+;  ram_addr[13] ; host_cs    ; 14.933 ; 14.933 ; Rise       ; host_cs         ;
+; ram_we        ; host_cs    ; 11.066 ; 11.066 ; Rise       ; host_cs         ;
+; rom_addr[*]   ; host_cs    ; 11.185 ; 11.185 ; Rise       ; host_cs         ;
+;  rom_addr[0]  ; host_cs    ; 11.189 ; 11.189 ; Rise       ; host_cs         ;
+;  rom_addr[1]  ; host_cs    ; 12.441 ; 12.441 ; Rise       ; host_cs         ;
+;  rom_addr[2]  ; host_cs    ; 11.185 ; 11.185 ; Rise       ; host_cs         ;
+;  rom_addr[3]  ; host_cs    ; 11.185 ; 11.185 ; Rise       ; host_cs         ;
+;  rom_addr[4]  ; host_cs    ; 12.875 ; 12.875 ; Rise       ; host_cs         ;
+;  rom_addr[5]  ; host_cs    ; 12.826 ; 12.826 ; Rise       ; host_cs         ;
+;  rom_addr[6]  ; host_cs    ; 12.983 ; 12.983 ; Rise       ; host_cs         ;
+;  rom_addr[7]  ; host_cs    ; 12.835 ; 12.835 ; Rise       ; host_cs         ;
+;  rom_addr[8]  ; host_cs    ; 13.565 ; 13.565 ; Rise       ; host_cs         ;
+;  rom_addr[9]  ; host_cs    ; 13.005 ; 13.005 ; Rise       ; host_cs         ;
+;  rom_addr[10] ; host_cs    ; 12.873 ; 12.873 ; Rise       ; host_cs         ;
+;  rom_addr[11] ; host_cs    ; 12.940 ; 12.940 ; Rise       ; host_cs         ;
+;  rom_addr[12] ; host_cs    ; 12.412 ; 12.412 ; Rise       ; host_cs         ;
+;  rom_addr[13] ; host_cs    ; 12.841 ; 12.841 ; Rise       ; host_cs         ;
+;  rom_addr[14] ; host_cs    ; 13.116 ; 13.116 ; Rise       ; host_cs         ;
+;  rom_addr[15] ; host_cs    ; 12.439 ; 12.439 ; Rise       ; host_cs         ;
+;  rom_addr[16] ; host_cs    ; 12.531 ; 12.531 ; Rise       ; host_cs         ;
+; rom_oe        ; host_cs    ; 10.845 ; 10.845 ; Rise       ; host_cs         ;
+; rom_we        ; host_cs    ; 10.832 ; 10.832 ; Rise       ; host_cs         ;
+; ram_we        ; host_cs    ; 11.066 ; 11.066 ; Fall       ; host_cs         ;
+; rom_oe        ; host_cs    ; 10.845 ; 10.845 ; Fall       ; host_cs         ;
+; rom_we        ; host_cs    ; 10.832 ; 10.832 ; Fall       ; host_cs         ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------+
+; Propagation Delay                                      ;
++--------------+-------------+--------+----+----+--------+
+; Input Port   ; Output Port ; RR     ; RF ; FR ; FF     ;
++--------------+-------------+--------+----+----+--------+
+; host_ad      ; ram_data[0] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[1] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[2] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[3] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[4] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[5] ; 11.531 ;    ;    ; 11.531 ;
+; host_ad      ; ram_data[6] ; 11.531 ;    ;    ; 11.531 ;
+; host_ad      ; ram_data[7] ; 11.531 ;    ;    ; 11.531 ;
+; host_ad      ; ram_we      ; 13.224 ;    ;    ; 13.224 ;
+; host_ad      ; rom_data[0] ; 9.572  ;    ;    ; 9.572  ;
+; host_ad      ; rom_data[1] ; 9.572  ;    ;    ; 9.572  ;
+; host_ad      ; rom_data[2] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[3] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[4] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[5] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[6] ; 11.816 ;    ;    ; 11.816 ;
+; host_ad      ; rom_data[7] ; 11.816 ;    ;    ; 11.816 ;
+; host_ad      ; rom_oe      ; 12.961 ;    ;    ; 12.961 ;
+; host_ad      ; rom_we      ; 12.948 ;    ;    ; 12.948 ;
+; host_data[0] ; ram_data[0] ; 8.669  ;    ;    ; 8.669  ;
+; host_data[0] ; rom_data[0] ; 8.997  ;    ;    ; 8.997  ;
+; host_data[1] ; ram_data[1] ; 8.847  ;    ;    ; 8.847  ;
+; host_data[1] ; rom_data[1] ; 8.972  ;    ;    ; 8.972  ;
+; host_data[2] ; ram_data[2] ; 8.688  ;    ;    ; 8.688  ;
+; host_data[2] ; rom_data[2] ; 10.295 ;    ;    ; 10.295 ;
+; host_data[3] ; ram_data[3] ; 8.701  ;    ;    ; 8.701  ;
+; host_data[3] ; rom_data[3] ; 8.558  ;    ;    ; 8.558  ;
+; host_data[4] ; ram_data[4] ; 8.697  ;    ;    ; 8.697  ;
+; host_data[4] ; rom_data[4] ; 9.000  ;    ;    ; 9.000  ;
+; host_data[5] ; ram_data[5] ; 8.095  ;    ;    ; 8.095  ;
+; host_data[5] ; rom_data[5] ; 9.026  ;    ;    ; 9.026  ;
+; host_data[6] ; ram_data[6] ; 8.348  ;    ;    ; 8.348  ;
+; host_data[6] ; rom_data[6] ; 8.939  ;    ;    ; 8.939  ;
+; host_data[7] ; ram_data[7] ; 8.302  ;    ;    ; 8.302  ;
+; host_data[7] ; rom_data[7] ; 8.900  ;    ;    ; 8.900  ;
++--------------+-------------+--------+----+----+--------+
+
+
++--------------------------------------------------------+
+; Minimum Propagation Delay                              ;
++--------------+-------------+--------+----+----+--------+
+; Input Port   ; Output Port ; RR     ; RF ; FR ; FF     ;
++--------------+-------------+--------+----+----+--------+
+; host_ad      ; ram_data[0] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[1] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[2] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[3] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[4] ; 12.109 ;    ;    ; 12.109 ;
+; host_ad      ; ram_data[5] ; 11.531 ;    ;    ; 11.531 ;
+; host_ad      ; ram_data[6] ; 11.531 ;    ;    ; 11.531 ;
+; host_ad      ; ram_data[7] ; 11.531 ;    ;    ; 11.531 ;
+; host_ad      ; ram_we      ; 13.224 ;    ;    ; 13.224 ;
+; host_ad      ; rom_data[0] ; 9.572  ;    ;    ; 9.572  ;
+; host_ad      ; rom_data[1] ; 9.572  ;    ;    ; 9.572  ;
+; host_ad      ; rom_data[2] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[3] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[4] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[5] ; 10.777 ;    ;    ; 10.777 ;
+; host_ad      ; rom_data[6] ; 11.816 ;    ;    ; 11.816 ;
+; host_ad      ; rom_data[7] ; 11.816 ;    ;    ; 11.816 ;
+; host_ad      ; rom_oe      ; 12.961 ;    ;    ; 12.961 ;
+; host_ad      ; rom_we      ; 12.948 ;    ;    ; 12.948 ;
+; host_data[0] ; ram_data[0] ; 8.669  ;    ;    ; 8.669  ;
+; host_data[0] ; rom_data[0] ; 8.997  ;    ;    ; 8.997  ;
+; host_data[1] ; ram_data[1] ; 8.847  ;    ;    ; 8.847  ;
+; host_data[1] ; rom_data[1] ; 8.972  ;    ;    ; 8.972  ;
+; host_data[2] ; ram_data[2] ; 8.688  ;    ;    ; 8.688  ;
+; host_data[2] ; rom_data[2] ; 10.295 ;    ;    ; 10.295 ;
+; host_data[3] ; ram_data[3] ; 8.701  ;    ;    ; 8.701  ;
+; host_data[3] ; rom_data[3] ; 8.558  ;    ;    ; 8.558  ;
+; host_data[4] ; ram_data[4] ; 8.697  ;    ;    ; 8.697  ;
+; host_data[4] ; rom_data[4] ; 9.000  ;    ;    ; 9.000  ;
+; host_data[5] ; ram_data[5] ; 8.095  ;    ;    ; 8.095  ;
+; host_data[5] ; rom_data[5] ; 9.026  ;    ;    ; 9.026  ;
+; host_data[6] ; ram_data[6] ; 8.348  ;    ;    ; 8.348  ;
+; host_data[6] ; rom_data[6] ; 8.939  ;    ;    ; 8.939  ;
+; host_data[7] ; ram_data[7] ; 8.302  ;    ;    ; 8.302  ;
+; host_data[7] ; rom_data[7] ; 8.900  ;    ;    ; 8.900  ;
++--------------+-------------+--------+----+----+--------+
+
+
++--------------------------------------------------------------------------+
+; Output Enable Times                                                      ;
++--------------+------------+--------+------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+------+------------+-----------------+
+; ram_data[*]  ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+;  ram_data[0] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[1] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[2] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[3] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[4] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[5] ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+;  ram_data[6] ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+;  ram_data[7] ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+; rom_data[*]  ; gen        ; 10.946 ;      ; Fall       ; gen             ;
+;  rom_data[0] ; gen        ; 10.946 ;      ; Fall       ; gen             ;
+;  rom_data[1] ; gen        ; 10.946 ;      ; Fall       ; gen             ;
+;  rom_data[2] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[3] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[4] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[5] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[6] ; gen        ; 13.190 ;      ; Fall       ; gen             ;
+;  rom_data[7] ; gen        ; 13.190 ;      ; Fall       ; gen             ;
+; ram_data[*]  ; host_cs    ; 14.189 ;      ; Rise       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 14.767 ;      ; Rise       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 14.767 ;      ; Rise       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 14.767 ;      ; Rise       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 14.767 ;      ; Rise       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 14.767 ;      ; Rise       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 14.189 ;      ; Rise       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 14.189 ;      ; Rise       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 14.189 ;      ; Rise       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 13.698 ;      ; Rise       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 13.698 ;      ; Rise       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 13.698 ;      ; Rise       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 14.903 ;      ; Rise       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 14.903 ;      ; Rise       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 14.903 ;      ; Rise       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 14.903 ;      ; Rise       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 15.942 ;      ; Rise       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 15.942 ;      ; Rise       ; host_cs         ;
+; ram_data[*]  ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 7.456  ;      ; Fall       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 7.456  ;      ; Fall       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 7.456  ;      ; Fall       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 9.700  ;      ; Fall       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 9.700  ;      ; Fall       ; host_cs         ;
++--------------+------------+--------+------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Output Enable Times                                              ;
++--------------+------------+--------+------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+------+------------+-----------------+
+; ram_data[*]  ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+;  ram_data[0] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[1] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[2] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[3] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[4] ; gen        ; 11.826 ;      ; Fall       ; gen             ;
+;  ram_data[5] ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+;  ram_data[6] ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+;  ram_data[7] ; gen        ; 11.248 ;      ; Fall       ; gen             ;
+; rom_data[*]  ; gen        ; 10.946 ;      ; Fall       ; gen             ;
+;  rom_data[0] ; gen        ; 10.946 ;      ; Fall       ; gen             ;
+;  rom_data[1] ; gen        ; 10.946 ;      ; Fall       ; gen             ;
+;  rom_data[2] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[3] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[4] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[5] ; gen        ; 12.151 ;      ; Fall       ; gen             ;
+;  rom_data[6] ; gen        ; 13.190 ;      ; Fall       ; gen             ;
+;  rom_data[7] ; gen        ; 13.190 ;      ; Fall       ; gen             ;
+; ram_data[*]  ; host_cs    ; 9.373  ;      ; Rise       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 9.951  ;      ; Rise       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 9.951  ;      ; Rise       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 9.951  ;      ; Rise       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 9.951  ;      ; Rise       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 9.951  ;      ; Rise       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 9.373  ;      ; Rise       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 9.373  ;      ; Rise       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 9.373  ;      ; Rise       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 7.456  ;      ; Rise       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 7.456  ;      ; Rise       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 7.456  ;      ; Rise       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 8.661  ;      ; Rise       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 8.661  ;      ; Rise       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 8.661  ;      ; Rise       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 8.661  ;      ; Rise       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 9.700  ;      ; Rise       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 9.700  ;      ; Rise       ; host_cs         ;
+; ram_data[*]  ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 9.951  ;      ; Fall       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 9.373  ;      ; Fall       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 7.456  ;      ; Fall       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 7.456  ;      ; Fall       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 7.456  ;      ; Fall       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 8.661  ;      ; Fall       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 9.700  ;      ; Fall       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 9.700  ;      ; Fall       ; host_cs         ;
++--------------+------------+--------+------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Output Disable Times                                                             ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; Data Port    ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; ram_data[*]  ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+;  ram_data[0] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[1] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[2] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[3] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[4] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[5] ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+;  ram_data[6] ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+;  ram_data[7] ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+; rom_data[*]  ; gen        ; 10.946    ;           ; Fall       ; gen             ;
+;  rom_data[0] ; gen        ; 10.946    ;           ; Fall       ; gen             ;
+;  rom_data[1] ; gen        ; 10.946    ;           ; Fall       ; gen             ;
+;  rom_data[2] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[3] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[4] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[5] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[6] ; gen        ; 13.190    ;           ; Fall       ; gen             ;
+;  rom_data[7] ; gen        ; 13.190    ;           ; Fall       ; gen             ;
+; ram_data[*]  ; host_cs    ; 14.189    ;           ; Rise       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 14.767    ;           ; Rise       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 14.767    ;           ; Rise       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 14.767    ;           ; Rise       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 14.767    ;           ; Rise       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 14.767    ;           ; Rise       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 14.189    ;           ; Rise       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 14.189    ;           ; Rise       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 14.189    ;           ; Rise       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 13.698    ;           ; Rise       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 13.698    ;           ; Rise       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 13.698    ;           ; Rise       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 14.903    ;           ; Rise       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 14.903    ;           ; Rise       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 14.903    ;           ; Rise       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 14.903    ;           ; Rise       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 15.942    ;           ; Rise       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 15.942    ;           ; Rise       ; host_cs         ;
+; ram_data[*]  ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 7.456     ;           ; Fall       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 7.456     ;           ; Fall       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 7.456     ;           ; Fall       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 9.700     ;           ; Fall       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 9.700     ;           ; Fall       ; host_cs         ;
++--------------+------------+-----------+-----------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                     ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; Data Port    ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; ram_data[*]  ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+;  ram_data[0] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[1] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[2] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[3] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[4] ; gen        ; 11.826    ;           ; Fall       ; gen             ;
+;  ram_data[5] ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+;  ram_data[6] ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+;  ram_data[7] ; gen        ; 11.248    ;           ; Fall       ; gen             ;
+; rom_data[*]  ; gen        ; 10.946    ;           ; Fall       ; gen             ;
+;  rom_data[0] ; gen        ; 10.946    ;           ; Fall       ; gen             ;
+;  rom_data[1] ; gen        ; 10.946    ;           ; Fall       ; gen             ;
+;  rom_data[2] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[3] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[4] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[5] ; gen        ; 12.151    ;           ; Fall       ; gen             ;
+;  rom_data[6] ; gen        ; 13.190    ;           ; Fall       ; gen             ;
+;  rom_data[7] ; gen        ; 13.190    ;           ; Fall       ; gen             ;
+; ram_data[*]  ; host_cs    ; 9.373     ;           ; Rise       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 9.951     ;           ; Rise       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 9.951     ;           ; Rise       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 9.951     ;           ; Rise       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 9.951     ;           ; Rise       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 9.951     ;           ; Rise       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 9.373     ;           ; Rise       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 9.373     ;           ; Rise       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 9.373     ;           ; Rise       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 7.456     ;           ; Rise       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 7.456     ;           ; Rise       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 7.456     ;           ; Rise       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 8.661     ;           ; Rise       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 8.661     ;           ; Rise       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 8.661     ;           ; Rise       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 8.661     ;           ; Rise       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 9.700     ;           ; Rise       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 9.700     ;           ; Rise       ; host_cs         ;
+; ram_data[*]  ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+;  ram_data[0] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[1] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[2] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[3] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[4] ; host_cs    ; 9.951     ;           ; Fall       ; host_cs         ;
+;  ram_data[5] ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+;  ram_data[6] ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+;  ram_data[7] ; host_cs    ; 9.373     ;           ; Fall       ; host_cs         ;
+; rom_data[*]  ; host_cs    ; 7.456     ;           ; Fall       ; host_cs         ;
+;  rom_data[0] ; host_cs    ; 7.456     ;           ; Fall       ; host_cs         ;
+;  rom_data[1] ; host_cs    ; 7.456     ;           ; Fall       ; host_cs         ;
+;  rom_data[2] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[3] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[4] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[5] ; host_cs    ; 8.661     ;           ; Fall       ; host_cs         ;
+;  rom_data[6] ; host_cs    ; 9.700     ;           ; Fall       ; host_cs         ;
+;  rom_data[7] ; host_cs    ; 9.700     ;           ; Fall       ; host_cs         ;
++--------------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; gen        ; gen      ; 0        ; 0        ; 0        ; 1121     ;
+; host_cs    ; gen      ; 0        ; 0        ; 16       ; 0        ;
+; host_cs    ; host_cs  ; 844      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; gen        ; gen      ; 0        ; 0        ; 0        ; 1121     ;
+; host_cs    ; gen      ; 0        ; 0        ; 16       ; 0        ;
+; host_cs    ; host_cs  ; 844      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 27    ; 27   ;
+; Unconstrained Input Port Paths  ; 237   ; 237  ;
+; Unconstrained Output Ports      ; 59    ; 59   ;
+; Unconstrained Output Port Paths ; 194   ; 194  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Mon Nov 20 14:52:41 2023
+Info: Command: quartus_sta vga2 -c vga2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'vga2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name gen gen
+    Info (332105): create_clock -period 1.000 -name host_cs host_cs
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -9.503
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -9.503      -243.421 host_cs 
+    Info (332119):    -8.668      -639.799 gen 
+Info (332146): Worst-case hold slack is 1.374
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.374         0.000 gen 
+    Info (332119):     2.908         0.000 host_cs 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000        -3.000 gen 
+    Info (332119):    -3.000        -3.000 host_cs 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 369 megabytes
+    Info: Processing ended: Mon Nov 20 14:52:44 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

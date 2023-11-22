@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'host_cs'
+Slack : -9.503
+TNS   : -243.421
+
+Type  : Setup 'gen'
+Slack : -8.668
+TNS   : -639.799
+
+Type  : Hold 'gen'
+Slack : 1.374
+TNS   : 0.000
+
+Type  : Hold 'host_cs'
+Slack : 2.908
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'gen'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Minimum Pulse Width 'host_cs'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------

@@ -1,0 +1,11 @@
+Fitter Status : Successful - Mon Nov 20 14:52:37 2023
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Revision Name : vga2
+Top-level Entity Name : vga2
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 218 / 240 ( 91 % )
+Total pins : 71 / 80 ( 89 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

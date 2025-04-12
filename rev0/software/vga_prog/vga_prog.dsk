@@ -13,11 +13,11 @@ ModuleType=SourceModule
 FormState=0
 FormOnTop=0
 
-[D:\WORK\c\vga_prog\vga_prog.bpr]
+[C:\Documents and Settings\zatim\ProjectGroup1.bpg]
 FormState=0
 FormOnTop=0
 
-[C:\Program Files\Borland\CBuilder6\Projects\ProjectGroup1.bpg]
+[D:\WORK\c\vga_prog\vga_prog.bpr]
 FormState=0
 FormOnTop=0
 
@@ -30,17 +30,15 @@ MessageView=MessageView@EditWindow0
 ClassHierarchy=ClassHierarchy@EditWindow0
 Create=1
 Visible=1
-State=2
+State=0
 Left=200
 Top=126
 Width=952
 Height=658
-MaxLeft=-4
-MaxTop=101
-MaxWidth=1408
-MaxHeight=923
-ClientWidth=1400
-ClientHeight=896
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=944
+ClientHeight=631
 LeftPanelSize=170
 LeftPanelClients=CodeExplorer@EditWindow0
 LeftPanelData=000004000000000000000000000000000000000000000000000100000000000000000C000000436F64654578706C6F726572FFFFFFFF
@@ -51,9 +49,9 @@ BottomPanelData=00000400010000000B0000004D65737361676556696577000000000000000000
 
 [View0]
 Module=D:\WORK\c\vga_prog\vga_prog.c
-CursorX=12
-CursorY=102
-TopLine=100
+CursorX=63
+CursorY=353
+TopLine=329
 LeftCol=1
 
 [Watches]
@@ -94,6 +92,23 @@ TBDockHeight=303
 LRDockWidth=438
 Dockable=1
 
+[CPUWindow]
+Create=1
+Visible=0
+State=0
+Left=433
+Top=348
+Width=533
+Height=353
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=525
+ClientHeight=326
+DumpPane=79
+DisassemblyPane=187
+RegisterPane=231
+FlagPane=64
+
 [AlignmentPalette]
 Create=1
 Visible=0
@@ -109,7 +124,7 @@ ClientHeight=60
 
 [PropertyInspector]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=0
 Top=471
@@ -130,7 +145,7 @@ HiddenCategories=
 
 [ObjectTree]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=0
 Top=105
@@ -186,11 +201,11 @@ State=0
 Left=0
 Top=12
 Width=170
-Height=884
+Height=619
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=170
-ClientHeight=884
+ClientHeight=619
 TBDockHeight=388
 LRDockWidth=170
 Dockable=1

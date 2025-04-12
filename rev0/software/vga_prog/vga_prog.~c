@@ -292,9 +292,10 @@ int main(int argc, char* argv[])
 			}
 //reset
 
-			DlPortWritePortUchar(baseaddr+2,0x04);
-      //DlPortWritePortUchar(baseaddr,0x00);
-      tika();
+			DlPortWritePortUchar(baseaddr+2,0x00);
+  		pause(DELAY);
+  		DlPortWritePortUchar(baseaddr+2,0x04);
+  		pause(DELAY);
 
 //test
 
@@ -314,6 +315,7 @@ skip:
       pause(DELAY);
 
       m=0;
+      //t=0x40;
       for(i=0;i<30;i++)
       	for(k=0;k<80;k++)
 				{

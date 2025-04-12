@@ -315,6 +315,7 @@ skip:
       pause(DELAY);
 
       m=0;
+      //t=0x40;
       for(i=0;i<30;i++)
       	for(k=0;k<80;k++)
 				{
@@ -349,7 +350,7 @@ skip:
           	if(k<8)
             	DlPortWritePortUchar(baseaddr,((7-k&0x07)<<4));
             else
-              DlPortWritePortUchar(baseaddr,((k&0x0F)<<4));
+              DlPortWritePortUchar(baseaddr,((k&0x07)<<4)|0x80);
 
           tikd();
         }

@@ -1,20 +1,23 @@
 [Closed Files]
-File_0=SourceModule,'D:\WORK\c\vga_prog\vga_prog.c',0,1,327,41,356,0,0
-File_1=SourceModule,'D:\WORK\c\vga_prog\vga_prog.cpp',0,1,1,1,1,0,0
-File_2=SourceModule,'D:\WORK\c\lpt_test\lpt_test.c',0,1,4,68,143,0,0
-File_3=SourceModule,'c:\program files\borland\cbuilder6\include\winreg.h',0,1,58,13,88,0,0
+File_0=SourceModule,'D:\WORK\c\vga_prog\vga_prog.cpp',0,1,1,1,1,0,0
+File_1=SourceModule,'D:\WORK\c\lpt_test\lpt_test.c',0,1,4,68,143,0,0
+File_2=SourceModule,'c:\program files\borland\cbuilder6\include\winreg.h',0,1,58,13,88,0,0
 
 [Modules]
-Module0=D:\WORK\c\vga_prog\vga_prog.bpr
+Module0=D:\WORK\c\vga_prog\vga_prog.c
 Count=1
 EditWindowCount=1
 
-[D:\WORK\c\vga_prog\vga_prog.bpr]
+[D:\WORK\c\vga_prog\vga_prog.c]
 ModuleType=SourceModule
 FormState=0
 FormOnTop=0
 
-[C:\Program Files\Borland\CBuilder6\Projects\ProjectGroup1.bpg]
+[C:\Documents and Settings\zatim\ProjectGroup1.bpg]
+FormState=0
+FormOnTop=0
+
+[D:\WORK\c\vga_prog\vga_prog.bpr]
 FormState=0
 FormOnTop=0
 
@@ -45,10 +48,10 @@ BottomPanelClients=MessageView@EditWindow0
 BottomPanelData=00000400010000000B0000004D657373616765566965770000000000000000000000000000000000FFFFFFFF
 
 [View0]
-Module=D:\WORK\c\vga_prog\vga_prog.bpf
-CursorX=1
-CursorY=1
-TopLine=1
+Module=D:\WORK\c\vga_prog\vga_prog.c
+CursorX=9
+CursorY=318
+TopLine=305
 LeftCol=1
 
 [Watches]
@@ -75,7 +78,7 @@ ClientHeight=78
 
 [ProjectManager]
 Create=1
-Visible=0
+Visible=1
 State=0
 Left=481
 Top=373
@@ -104,7 +107,7 @@ ClientHeight=60
 
 [PropertyInspector]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=0
 Top=471
@@ -125,7 +128,7 @@ HiddenCategories=
 
 [ObjectTree]
 Create=1
-Visible=1
+Visible=0
 State=0
 Left=0
 Top=105
